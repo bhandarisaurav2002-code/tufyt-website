@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TUFYT | 2-in-1 Training Shorts</title>
+<meta name="description" content="TUFYT 2-in-1 training shorts — built for training, movement and everyday activewear.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="#">TUFYT<span>®</span></a>
+  <nav>
+    <a href="#product">Shop</a>
+    <a href="#features">Features</a>
+    <a href="#size">Size Guide</a>
+  </nav>
+  <button class="cart-btn" id="cartOpen">Cart <b id="cartCount">0</b></button>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">TUFYT ACTIVEWEAR</p>
+    <h1>TRAIN STRONG.<br><em>MOVE FREE.</em></h1>
+    <p class="hero-text">2-in-1 training shorts designed for workouts, running and everyday movement.</p>
+    <a class="btn dark" href="#product">SHOP THE SHORTS</a>
+  </div>
+  <div class="hero-image">
+    <img src="images/navy-front.png" alt="TUFYT 2-in-1 navy training shorts">
+  </div>
+</section>
+
+<section class="product-section" id="product">
+  <div class="gallery">
+    <div class="thumbs">
+      <button class="thumb active"><img src="images/navy-front.png" alt=""></button>
+      <button class="thumb"><img src="images/navy-back.png" alt=""></button>
+      <button class="thumb"><img src="images/navy-pocket.png" alt=""></button>
+      <button class="thumb"><img src="images/black-front.png" alt=""></button>
+      <button class="thumb"><img src="images/grey-front.png" alt=""></button>
+    </div>
+    <div class="main-photo"><img id="mainImage" src="images/navy-front.png" alt="TUFYT 2-in-1 training shorts"></div>
+  </div>
+
+  <div class="product-info">
+    <p class="eyebrow">MEN'S GYMWEAR</p>
+    <h2>TUFYT 2-in-1 Training Shorts</h2>
+    <div class="rating">★★★★★ <span>Built for active training</span></div>
+    <div class="price" id="price">₹699</div>
+    <p class="muted">A versatile 2-layer short with a supportive inner layer, adjustable drawstring and secure zip pocket.</p>
+
+    <div class="option">
+      <div class="option-head"><strong>Colour</strong><span id="colorName">Navy Blue</span></div>
+      <div class="swatches">
+        <button class="swatch navy selected" data-color="Navy Blue" data-image="images/navy-front.png"></button>
+        <button class="swatch black" data-color="Black" data-image="images/black-front.png"></button>
+        <button class="swatch grey" data-color="Dark Grey" data-image="images/grey-front.png"></button>
+      </div>
+    </div>
+
+    <div class="option" id="size">
+      <div class="option-head"><strong>Size</strong><button class="size-link" onclick="document.getElementById('sizeModal').classList.add('show')">Size Guide</button></div>
+      <div class="sizes">
+        <button class="size selected">M</button>
+        <button class="size">L</button>
+        <button class="size">XL</button>
+        <button class="size">XXL</button>
+      </div>
+    </div>
+
+    <div class="buy-row">
+      <button class="btn dark add" id="addCart">ADD TO CART</button>
+      <button class="btn whatsapp" id="whatsapp">ORDER ON WHATSAPP</button>
+    </div>
+    <p class="small-note">Free shipping and COD availability can be added here later.</p>
+
+    <div class="trust">
+      <div><b>2-LAYER</b><span>Outer + inner short</span></div>
+      <div><b>ZIP POCKET</b><span>Secure essentials</span></div>
+      <div><b>DRAWSTRING</b><span>Adjustable fit</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="feature-strip" id="features">
+  <div><span>01</span><h3>2-Layer Comfort</h3><p>Outer training short paired with a fitted inner layer for confident movement.</p></div>
+  <div><span>02</span><h3>Secure Pocket</h3><p>Zip pocket keeps small essentials more secure while you're moving.</p></div>
+  <div><span>03</span><h3>Training Ready</h3><p>Designed for gym sessions, running, workouts and active everyday wear.</p></div>
+</section>
+
+<section class="story">
+  <div>
+    <p class="eyebrow">WHY TUFYT</p>
+    <h2>Built for the work you put in.</h2>
+  </div>
+  <p>TUFYT creates gymwear and fitness essentials with a simple goal: give you reliable gear that looks sharp and moves with you. Start with one product today and build your training collection from here.</p>
+</section>
+
+<section class="size-section">
+  <div>
+    <p class="eyebrow">FIND YOUR FIT</p>
+    <h2>Choose your size with confidence.</h2>
+    <p>Use the measurements below before ordering. If you are between sizes, choose according to your preferred fit.</p>
+    <button class="btn outline" onclick="document.getElementById('sizeModal').classList.add('show')">VIEW SIZE CHART</button>
+  </div>
+  <img src="images/size.png" alt="TUFYT 2-in-1 shorts size chart">
+</section>
+
+<section class="newsletter">
+  <p class="eyebrow">TUFYT</p>
+  <h2>Train strong. Move free.</h2>
+  <p>Gymwear and fitness essentials for your next session.</p>
+  <a class="btn dark" href="#product">SHOP NOW</a>
+</section>
+</main>
+
+<footer>
+  <div class="footer-brand">TUFYT<span>®</span></div>
+  <p>Gymwear • Activewear • Fitness Essentials</p>
+  <p class="copyright">© 2026 TUFYT. All rights reserved.</p>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="cart" id="cart">
+  <div class="cart-head"><h3>Your Cart</h3><button id="cartClose">×</button></div>
+  <div id="cartItems" class="cart-items"><p class="empty">Your cart is empty.</p></div>
+  <div class="cart-bottom">
+    <div class="total"><span>Total</span><b id="cartTotal">₹0</b></div>
+    <button class="btn whatsapp" id="cartWhatsapp">ORDER CART ON WHATSAPP</button>
+  </div>
+</aside>
+
+<div class="modal" id="sizeModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('sizeModal').classList.remove('show')">×</button>
+    <h2>TUFYT Size Guide</h2>
+    <img src="images/size.png" alt="TUFYT size chart">
+  </div>
+</div>
+
+<script>
+const PRICE = 699; // Change your selling price here.
+const WHATSAPP_NUMBER = "919999999999"; // Replace with your WhatsApp number, including country code.
+
+let selectedColor = "Navy Blue";
+let selectedSize = "M";
+let cart = [];
+
+const mainImage = document.getElementById("mainImage");
+const colorName = document.getElementById("colorName");
+
+document.querySelectorAll(".thumb").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".thumb").forEach(x => x.classList.remove("active"));
+    btn.classList.add("active");
+    mainImage.src = btn.querySelector("img").src;
+  });
+});
+
+document.querySelectorAll(".swatch").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".swatch").forEach(x => x.classList.remove("selected"));
+    btn.classList.add("selected");
+    selectedColor = btn.dataset.color;
+    colorName.textContent = selectedColor;
+    mainImage.src = btn.dataset.image;
+  });
+});
+
+document.querySelectorAll(".size").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".size").forEach(x => x.classList.remove("selected"));
+    btn.classList.add("selected");
+    selectedSize = btn.textContent;
+  });
+});
+
+function updateCart() {
+  const count = cart.reduce((sum, item) => sum + item.qty, 0);
+  document.getElementById("cartCount").textContent = count;
+  document.getElementById("cartTotal").textContent = "₹" + (cart.reduce((sum, item) => sum + item.qty * item.price, 0));
+  const box = document.getElementById("cartItems");
+  if (!cart.length) {
+    box.innerHTML = '<p class="empty">Your cart is empty.</p>';
+    return;
+  }
+  box.innerHTML = cart.map((item, i) => `
+    <div class="cart-item">
+      <img src="${item.image}" alt="">
+      <div><b>${item.name}</b><p>${item.color} · Size ${item.size}</p><strong>₹${item.price} × ${item.qty}</strong></div>
+      <button onclick="removeItem(${i})">×</button>
+    </div>`).join("");
+}
+function removeItem(i) { cart.splice(i,1); updateCart(); }
+
+document.getElementById("addCart").addEventListener("click", () => {
+  const existing = cart.find(x => x.color === selectedColor && x.size === selectedSize);
+  if (existing) existing.qty++;
+  else cart.push({name:"TUFYT 2-in-1 Training Shorts", color:selectedColor, size:selectedSize, qty:1, price:PRICE, image:mainImage.src});
+  updateCart();
+  document.getElementById("cart").classList.add("show");
+  document.getElementById("overlay").classList.add("show");
+});
+
+function openWhatsApp(items) {
+  const text = "Hi TUFYT! I want to order:%0A%0A" + items;
+  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + text, "_blank");
+}
+document.getElementById("whatsapp").addEventListener("click", () => {
+  openWhatsApp("TUFYT 2-in-1 Training Shorts%0AColour: " + selectedColor + "%0ASize: " + selectedSize + "%0AQty: 1%0APrice: ₹" + PRICE);
+});
+document.getElementById("cartWhatsapp").addEventListener("click", () => {
+  if (!cart.length) return;
+  const lines = cart.map(x => `${x.name} - ${x.color} - Size ${x.size} - Qty ${x.qty} - ₹${x.price*x.qty}`).join("%0A");
+  openWhatsApp(lines + "%0A%0ATotal: ₹" + cart.reduce((s,x)=>s+x.price*x.qty,0));
+});
+
+document.getElementById("cartOpen").onclick = () => {document.getElementById("cart").classList.add("show");document.getElementById("overlay").classList.add("show");};
+function closeCart(){document.getElementById("cart").classList.remove("show");document.getElementById("overlay").classList.remove("show");}
+document.getElementById("cartClose").onclick = closeCart;
+document.getElementById("overlay").onclick = closeCart;
+updateCart();
+</script>
+</body>
+</html>
