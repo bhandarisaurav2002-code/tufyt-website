@@ -1,13 +1,24 @@
-TUFYT WEBSITE - QUICK SETUP
+TUFYT WEBSITE - UPDATED VERSION
 
-1. Open index.html to preview the website on your computer.
-2. To publish free with GitHub Pages:
-   - Create a GitHub repository (example: tufyt-website)
-   - Upload index.html, style.css, and the images folder.
-   - Settings > Pages > Deploy from branch > main > /root > Save
-3. BEFORE SELLING:
-   - Open index.html and change PRICE = 699 to your real price.
-   - Change WHATSAPP_NUMBER = "919999999999" to your WhatsApp number with country code.
-   - Update shipping/COD wording in the page to match your actual policies.
-4. The current site contains ONE product: TUFYT 2-in-1 Training Shorts.
-   Product images are the images supplied for this build.
+Files:
+- index.html
+- style.css
+- images/
+
+IMPORTANT:
+Open index.html and search for:
+const WHATSAPP_NUMBER = "919999999999";
+
+Replace 919999999999 with your real WhatsApp number including country code.
+
+Current product price is ₹699.
+Current product: TUFYT 2-in-1 Training Shorts.
+Colours: Navy Blue, Black, Dark Grey.
+Sizes: M, L, XL, XXL.
+
+TO UPLOAD TO GITHUB:
+1. Open your tufyt-website repository.
+2. Replace index.html.
+3. Replace style.css.
+4. Keep the existing images folder, or upload this package's images folder too.
+5. GitHub Pages will update automatically after the commit.
