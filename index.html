@@ -84,7 +84,20 @@
         <div class="sizes">
           <button class="size selected">M</button>
           <button class="size">L</button>
-          <button class="size">XL</button>
+          <butto
+<div class="tufyt-order-form" style="margin:22px 0 14px;padding:18px;border:1px solid #ddd;border-radius:10px;background:#fff;">
+  <h3 style="margin:0 0 14px;font-size:18px;">Delivery Details</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+    <input id="customerName" type="text" placeholder="Full Name" style="padding:12px;border:1px solid #ccc;border-radius:6px;">
+    <input id="customerPhone" type="tel" placeholder="Phone Number" style="padding:12px;border:1px solid #ccc;border-radius:6px;">
+    <input id="customerPincode" type="text" placeholder="Pincode" style="padding:12px;border:1px solid #ccc;border-radius:6px;">
+    <input id="customerCity" type="text" placeholder="City" style="padding:12px;border:1px solid #ccc;border-radius:6px;">
+  </div>
+  <textarea id="customerAddress" placeholder="Complete Delivery Address" rows="3" style="width:100%;box-sizing:border-box;margin-top:10px;padding:12px;border:1px solid #ccc;border-radius:6px;resize:vertical;"></textarea>
+  <input id="customerQty" type="number" min="1" value="1" placeholder="Quantity" style="margin-top:10px;padding:12px;width:100%;box-sizing:border-box;border:1px solid #ccc;border-radius:6px;">
+  <p style="margin:9px 0 0;font-size:12px;color:#666;">Fill these details before ordering on WhatsApp.</p>
+</div>
+n class="size">XL</button>
           <button class="size">XXL</button>
         </div>
       </div>
@@ -364,6 +377,74 @@
   });
 
   updateCart();
+</script>
+
+
+<script>
+(function(){
+  const waNumber = "917827955976";
+  function getVal(id){ return (document.getElementById(id)?.value || "").trim(); }
+
+  window.tufytOrderOnWhatsApp = function(){
+    const name = getVal("customerName");
+    const phone = getVal("customerPhone");
+    const pincode = getVal("customerPincode");
+    const city = getVal("customerCity");
+    const address = getVal("customerAddress");
+    const qty = getVal("customerQty") || "1";
+
+    if(!name || !phone || !pincode || !city || !address){
+      alert("Please fill in your name, phone number, pincode, city and complete address before ordering.");
+      return;
+    }
+
+    const product = "TUFYT 2-in-1 Training Shorts";
+    const price = "₹699";
+    let colour = "";
+    let size = "";
+
+    // Read common selection labels/values from the existing page where possible.
+    const text = document.body.innerText;
+    const colourMatch = text.match(/Colour\s*[\r\n ]+([A-Za-z ]+)/i);
+    if(colourMatch) colour = colourMatch[1].trim().split(/\n/)[0];
+    const sizeButtons = document.querySelectorAll("button");
+    sizeButtons.forEach(b => {
+      if(b.classList.contains("active") || b.getAttribute("aria-pressed") === "true" || b.style.backgroundColor === "black"){
+        const t = b.innerText.trim();
+        if(["M","L","XL","XXL"].includes(t)) size = t;
+      }
+    });
+
+    const message =
+`Hello TUFYT! I want to place an order.
+
+Product: ${product}
+Price: ${price}
+Colour: ${colour || "Selected on website"}
+Size: ${size || "Selected on website"}
+Quantity: ${qty}
+
+Customer Name: ${name}
+Phone: ${phone}
+Address: ${address}
+City: ${city}
+Pincode: ${pincode}`;
+
+    window.open("https://wa.me/" + waNumber + "?text=" + encodeURIComponent(message), "_blank");
+  };
+
+  // Attach to buttons containing ORDER ON WHATSAPP, while preserving the existing button design.
+  document.querySelectorAll("button, a").forEach(function(el){
+    if((el.innerText || "").toUpperCase().includes("ORDER ON WHATSAPP")){
+      el.onclick = function(e){
+        e.preventDefault();
+        window.tufytOrderOnWhatsApp();
+        return false;
+      };
+      if(el.tagName.toLowerCase() === "a") el.removeAttribute("href");
+    }
+  });
+})();
 </script>
 
 </body>
